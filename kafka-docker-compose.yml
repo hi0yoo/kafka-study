@@ -1,12 +1,20 @@
 version: '3'
+
+volumes:
+  local-kafka:
+    external: true
+    name: local-kafka
+
 services:
   zookeeper:
-    container_name: rasp-zookeeper
+    container_name: zookeeper
     image: zookeeper
     ports:
       - "2181:2181"
+    restart: always
+
   kafka:
-    container_name: rasp-kafka
+    container_name: kafka-1
     image: wurstmeister/kafka
     depends_on:
       - zookeeper
@@ -21,3 +29,5 @@ services:
       # KAFKA_HEAP_OPTS: "-Xmx400m -Xms400m" # 카프카 브로커 실행시 힙 메모리 지정
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - local-kafka:/var/lib/local-kafka
+    restart: always
