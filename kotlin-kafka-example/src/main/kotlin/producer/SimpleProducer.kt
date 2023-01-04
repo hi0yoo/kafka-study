@@ -28,7 +28,7 @@ class SimpleProducer {
             // ProducerRecord 전송시 사용
             val producer = KafkaProducer<String, String>(configs)
 
-            val messageValue = "test message 123"
+            val messageValue = "51236"
             // 카프카 브로커로 데이터를 보내기 위해 ProducerRecord 생성
             // 메시지 키를 선언하지 않았으므로 null로 설정되어 전송됨
             val record = ProducerRecord<String, String>(TOPIC_NAME, messageValue)

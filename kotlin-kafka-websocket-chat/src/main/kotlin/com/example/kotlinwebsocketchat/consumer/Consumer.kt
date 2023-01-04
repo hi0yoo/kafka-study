@@ -1,6 +1,6 @@
-package com.example.kafkastudy.consumer
+package com.example.kotlinwebsocketchat.consumer
 
-import com.example.kafkastudy.socket.CustomWebSocketHandler
+import com.example.kotlinwebsocketchat.socket.CustomWebSocketHandler
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.consumer.KafkaConsumer
 import org.slf4j.LoggerFactory

@@ -1,6 +1,6 @@
-package com.example.kafkastudy.socket
+package com.example.kotlinwebsocketchat.socket
 
-import com.example.kafkastudy.producer.Producer
+import com.example.kotlinwebsocketchat.producer.Producer
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component

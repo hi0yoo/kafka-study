@@ -1,11 +1,11 @@
-package com.example.kafkastudy
+package com.example.kotlinwebsocketchat
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KafkaStudyApplication
+class KotlinWebsocketChatApplication
 
 fun main(args: Array<String>) {
-    runApplication<KafkaStudyApplication>(*args)
+    runApplication<KotlinWebsocketChatApplication>(*args)
 }

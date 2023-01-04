@@ -1,4 +1,4 @@
-package com.example.kafkastudy.producer
+package com.example.kotlinwebsocketchat.producer
 
 import org.slf4j.LoggerFactory
 import org.springframework.kafka.core.KafkaTemplate

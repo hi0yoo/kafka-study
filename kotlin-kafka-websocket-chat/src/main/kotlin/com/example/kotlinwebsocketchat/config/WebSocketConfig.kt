@@ -1,6 +1,6 @@
-package com.example.kafkastudy.config
+package com.example.kotlinwebsocketchat.config
 
-import com.example.kafkastudy.socket.CustomWebSocketHandler
+import com.example.kotlinwebsocketchat.socket.CustomWebSocketHandler
 import org.springframework.context.annotation.Configuration
 import org.springframework.web.socket.config.annotation.EnableWebSocket
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer

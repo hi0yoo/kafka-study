@@ -1,4 +1,4 @@
-package com.example.kafkastudy.config
+package com.example.kotlinwebsocketchat.config
 
 import org.apache.kafka.clients.producer.ProducerConfig
 import org.springframework.beans.factory.annotation.Value

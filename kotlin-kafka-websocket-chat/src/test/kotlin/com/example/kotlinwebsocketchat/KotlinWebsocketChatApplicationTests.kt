@@ -1,10 +1,10 @@
-package com.example.kafkastudy
+package com.example.kotlinwebsocketchat
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class KafkaStudyApplicationTests {
+class KotlinWebsocketChatApplicationTests {
 
     @Test
     fun contextLoads() {
