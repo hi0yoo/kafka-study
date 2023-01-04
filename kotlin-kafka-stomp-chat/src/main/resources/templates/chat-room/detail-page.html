@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>채팅방 상세</title>
+    <link href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script async src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+</head>
+<body>
+
+</body>
+<script th:inline="javascript">
+    const chatRoomId = [[${chatRoomInfo.getChatRoomId()}]]
+    console.log(chatRoomId)
+    const socket = new SockJS("/ws-chat")
+    const stompClient = Stomp.over(socket);
+
+    const onConnected = () => {
+        stompClient.subscribe("/topic/chat-room/" + chatRoomId, (payload) => console.log(payload))
+    }
+    const onError = (err) => {
+        console.log("error")
+        console.log(err)
+    }
+
+    stompClient.connect({}, onConnected, onError)
+</script>
+</html>

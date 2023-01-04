@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+    <link href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script async src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="">
+    <label for="input-login-id">ID : </label>
+    <input id="input-login-id" type="text"/>
+    <button type="button" onclick="onLoginButtonClick()">로그인</button>
+</div>
+</body>
+<script type="text/javascript">
+    const onLoginButtonClick = () => {
+        const loginId = $("#input-login-id").val();
+        $.ajax("/login", {
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "username": loginId
+            }),
+            dataType: "JSON",
+            success: () => {
+                location.replace("/chat-rooms")
+            }
+        })
+    }
+</script>
+</html>

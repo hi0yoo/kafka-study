@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>채팅방 생성</title>
+    <link href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+    <script async src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <label for="input-room-name">채팅방 제목 : </label>
+    <input id="input-room-name" type="text"/>
+    <button onclick="onCreateButtonClick()">생성하기</button>
+</div>
+</body>
+<script type="text/javascript">
+    const onCreateButtonClick = () => {
+        const roomName = $("#input-room-name").val();
+        $.ajax("/chat-rooms", {
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({
+                "chatRoomName": roomName
+            }),
+            dataType: "JSON",
+            success: () => {
+                // TODO 채팅방으로 바로 이동
+                location.replace("/chat-rooms")
+            }
+        })
+    }
+</script>
+</html>

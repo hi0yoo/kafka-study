@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>채팅방 목록</title>
+    <link href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script async src="/webjars/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <button onclick="onCreateChatRoomClick()">채팅방 생성하기</button>
+    </div>
+    <div th:if="${chatRooms.size()} != 0">
+        <ul th:each="chatRoom : ${chatRooms}">
+            <li th:text="${chatRoom.getChatRoomName()}" th:chatRoomId="${chatRoom.chatRoomId}"
+                th:onclick="onChatRoomClick(this.getAttribute('chatRoomId'))">chat-room-name
+            </li>
+        </ul>
+    </div>
+    <div th:unless="${chatRooms.size()} != 0">
+        생성된 채팅방이 존재하지 않습니다.
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    const onCreateChatRoomClick = () => location.replace("/chat-rooms/new")
+    const onChatRoomClick = (chatRoomId) => {
+        location.replace(`/chat-rooms/${chatRoomId}`)
+    }
+</script>
+</html>
